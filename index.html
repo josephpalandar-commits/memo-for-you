@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#fff0f5" />
+<title>For Memo ♡</title>
+<style>
+  :root{--pink:#f7a8c4;--rose:#d95785;--deep:#843c5b;--cream:#fff9fb;--text:#67384d;--soft:#ffe1ec}
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:linear-gradient(180deg,#fff5f8 0%,#ffeaf2 48%,#fff8fb 100%);color:var(--text);font-family:Georgia,'Times New Roman',serif;overflow-x:hidden}
+  .floating-hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .floating-hearts span{position:absolute;bottom:-50px;color:#e879a1;opacity:.28;animation:floatUp linear infinite;font-family:Arial,sans-serif}
+  .floating-hearts span:nth-child(1){left:8%;font-size:22px;animation-duration:13s}.floating-hearts span:nth-child(2){left:25%;font-size:16px;animation-duration:17s;animation-delay:3s}.floating-hearts span:nth-child(3){left:48%;font-size:25px;animation-duration:15s;animation-delay:1s}.floating-hearts span:nth-child(4){left:72%;font-size:18px;animation-duration:18s;animation-delay:5s}.floating-hearts span:nth-child(5){left:91%;font-size:28px;animation-duration:14s;animation-delay:2s}
+  @keyframes floatUp{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+  main{position:relative;z-index:1}.hero{min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px 22px;position:relative}
+  .eyebrow{letter-spacing:.2em;text-transform:uppercase;font:600 11px Arial,sans-serif;color:#b35b7b}.heart-stamp{font-size:42px;animation:heartbeat 1.8s infinite;margin:20px 0 8px}@keyframes heartbeat{0%,100%{transform:scale(1)}10%,25%{transform:scale(1.12)}18%,32%{transform:scale(1)}}
+  h1{font-size:clamp(3.3rem,12vw,6.5rem);font-weight:normal;line-height:.95;margin:12px 0;color:#c84d7c;letter-spacing:-.04em}h1 em{font-weight:normal;color:#8c4967}
+  .hero p{font-size:clamp(1rem,3.5vw,1.25rem);line-height:1.7;max-width:470px;margin:20px auto 26px}
+  .button{display:inline-block;border:0;border-radius:999px;padding:14px 23px;background:#d95785;color:white;text-decoration:none;font:600 13px Arial,sans-serif;letter-spacing:.02em;box-shadow:0 8px 22px #d9578530;cursor:pointer;transition:transform .2s,box-shadow .2s}.button:hover{transform:translateY(-2px);box-shadow:0 11px 28px #d9578545}.secondary{background:#fff;color:#b54874;border:1px solid #f4bfd1;box-shadow:none}
+  .scroll-note{position:absolute;bottom:20px;font:11px Arial,sans-serif;letter-spacing:.12em;color:#b35b7b}
+  section{padding:74px 20px;max-width:900px;margin:0 auto}.section-label{text-align:center;font:600 11px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#b35b7b}h2{text-align:center;font-weight:normal;font-size:clamp(2rem,7vw,3.4rem);margin:12px 0 15px;color:#a8446e} .intro{text-align:center;max-width:550px;margin:0 auto 32px;line-height:1.7}
+  .letter-card{max-width:680px;margin:28px auto 0;background:#fffdfd;border:1px solid #f8d2df;border-radius:18px;padding:clamp(24px,6vw,48px);box-shadow:0 18px 55px #ad537016;position:relative}.letter-card:before{content:'♡';position:absolute;right:20px;top:10px;font-size:35px;color:#f0b1c8}.letter-card p{font-size:1.08rem;line-height:1.9;margin:0 0 17px}.signature{font-style:italic;color:#c84d7c;font-size:1.35rem!important;margin-top:25px!important}
+  .reasons{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px;margin-top:34px}.reason{display:flex;gap:12px;align-items:flex-start;background:#ffffffb8;border:1px solid #f7d2df;border-radius:14px;padding:17px 16px;line-height:1.55;min-height:82px}.number{display:grid;place-items:center;flex:0 0 28px;height:28px;background:#ffe1ec;color:#c84d7c;border-radius:50%;font:600 12px Arial,sans-serif}.reason p{margin:2px 0 0;font-size:.98rem}
+  .song-card{max-width:600px;margin:30px auto 0;border-radius:24px;padding:30px 22px;text-align:center;background:linear-gradient(145deg,#f9bfd2,#ffeaf2);border:1px solid #f4c6d7;box-shadow:0 18px 50px #b04b7517}.vinyl{width:116px;height:116px;margin:0 auto 20px;border-radius:50%;background:repeating-radial-gradient(circle at center,#2d2330 0 3px,#443440 4px 6px,#2d2330 7px 9px);display:grid;place-items:center;box-shadow:0 8px 20px #763b5633;animation:spin 9s linear infinite}.vinyl span{width:39px;height:39px;background:#f6b5cc;border-radius:50%;display:grid;place-items:center;color:#a8446e;font-size:20px}@keyframes spin{to{transform:rotate(360deg)}}.song-title{font-size:1.7rem;margin:0 0 8px}.song-note{line-height:1.7;max-width:430px;margin:0 auto 20px}.song-input{display:block;width:min(100%,410px);margin:0 auto 12px;border:1px solid #e9a8c0;background:#fff9fb;border-radius:12px;padding:13px 14px;color:#67384d;font:14px Arial,sans-serif;outline-color:#d95785}.tiny{font:12px Arial,sans-serif;line-height:1.6;color:#86566b}
+  .last-note{text-align:center;padding-top:45px;padding-bottom:95px}.last-note .big-heart{font-size:38px;color:#d95785}.last-note p{max-width:530px;margin:15px auto;line-height:1.8}.footer{text-align:center;padding:20px;font:11px Arial,sans-serif;letter-spacing:.08em;color:#b35b7b}
+  .surprise{display:none;margin:25px auto 0;max-width:600px;background:#fff;border:1px dashed #e7a1bb;padding:25px;border-radius:18px;text-align:center;line-height:1.8;font-size:1.1rem}.surprise.show{display:block;animation:appear .5s ease}@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="floating-hearts" aria-hidden="true"><span>♥</span><span>♡</span><span>♥</span><span>♡</span><span>♥</span></div>
+<main>
+  <header class="hero" id="top">
+    <div class="eyebrow">a tiny corner of the internet, just for you</div>
+    <div class="heart-stamp">♡</div>
+    <h1>For <em>Memo</em></h1>
+    <p>Out of all the people in this world, I'm so happy I get to know you, laugh with you, and call you my favorite person. This little page is just a reminder of that. 💗</p>
+    <a class="button" href="#letter">Open your little surprise ♡</a>
+    <div class="scroll-note">MADE WITH LOVE · JUST FOR YOU ↓</div>
+  </header>
+
+  <section id="letter">
+    <div class="section-label">a little letter</div>
+    <h2>Dear Memo, ♡</h2>
+    <p class="intro">A few things I hope you never forget.</p>
+    <article class="letter-card">
+      <p>My Memo,</p>
+      <p>I wanted to make you something that you could come back to whenever you need a little reminder of how loved you are.</p>
+      <p>You make ordinary moments feel special just by being part of them. I love hearing about your day, laughing with you over the most random things, and getting to know all the little parts of you that make you <em>you</em>.</p>
+      <p>I might tease you a lot (because, let's be honest, you're too easy sometimes 😂), but underneath all the jokes, I hope you always know how much I appreciate you. I appreciate your time, your heart, your stories, your laugh, and the way you make me smile without even trying.</p>
+      <p>I can't promise I'll always say everything perfectly, but I can promise I'll keep trying to show you how much you matter to me. You deserve love that you can feel in the little things, not just hear in the big words.</p>
+      <p>So if you ever have a hard day, or you just want a reason to smile, come back here. This page is a tiny reminder that someone is really glad you're in their life.</p>
+      <p class="signature">Always cheering for you, ♡<br>Your favorite person (hopefully 😌)</p>
+    </article>
+  </section>
+
+  <section id="reasons">
+    <div class="section-label">the list could go on forever</div>
+    <h2>20 reasons I love you</h2>
+    <p class="intro">Twenty little reasons, and still not nearly enough.</p>
+    <div class="reasons">
+      <div class="reason"><span class="number">01</span><p>Your smile can turn my whole day around.</p></div>
+      <div class="reason"><span class="number">02</span><p>I love how you can talk to me about anything.</p></div>
+      <div class="reason"><span class="number">03</span><p>Your laugh is one of my favorite sounds.</p></div>
+      <div class="reason"><span class="number">04</span><p>You make even boring conversations fun.</p></div>
+      <div class="reason"><span class="number">05</span><p>I love hearing all the little details of your day.</p></div>
+      <div class="reason"><span class="number">06</span><p>You make me smile at my phone like an idiot. 😂</p></div>
+      <div class="reason"><span class="number">07</span><p>I love your sense of humor.</p></div>
+      <div class="reason"><span class="number">08</span><p>You have your own special way of making things better.</p></div>
+      <div class="reason"><span class="number">09</span><p>I love how excited you get about things you care about.</p></div>
+      <div class="reason"><span class="number">10</span><p>You make me look forward to our calls.</p></div>
+      <div class="reason"><span class="number">11</span><p>I love learning new things about you.</p></div>
+      <div class="reason"><span class="number">12</span><p>You can make me laugh when I least expect it.</p></div>
+      <div class="reason"><span class="number">13</span><p>I appreciate the time and attention you give me.</p></div>
+      <div class="reason"><span class="number">14</span><p>I love the little things that make you uniquely you.</p></div>
+      <div class="reason"><span class="number">15</span><p>You make distance feel a little smaller when we talk.</p></div>
+      <div class="reason"><span class="number">16</span><p>I love sharing random thoughts with you.</p></div>
+      <div class="reason"><span class="number">17</span><p>You remind me not to take every little thing so seriously.</p></div>
+      <div class="reason"><span class="number">18</span><p>I love that we can joke around and still be there for each other.</p></div>
+      <div class="reason"><span class="number">19</span><p>I'm grateful for the memories we're making together.</p></div>
+      <div class="reason"><span class="number">20</span><p>Because you're you, Memo—and that's my favorite reason. ♡</p></div>
+    </div>
+  </section>
+
+  <section id="song">
+    <div class="section-label">press play and think of us</div>
+    <h2>Our little song 🎶</h2>
+    <p class="intro">Every love story deserves a soundtrack. This spot is for the song that reminds you of each other.</p>
+    <div class="song-card">
+      <div class="vinyl" aria-hidden="true"><span>♥</span></div>
+      <p class="song-title">Our song</p>
+      <p class="song-note">If a song makes you think of Memo, add its YouTube or Spotify link here. Then the button below will open it for her.</p>
+      <label class="tiny" for="songLink">Paste a song link (this stays in this browser):</label>
+      <input class="song-input" id="songLink" type="url" placeholder="https://open.spotify.com/... or YouTube link" autocomplete="url" />
+      <button class="button" id="playSong">Open our song ♡</button>
+      <p class="tiny" id="songStatus" aria-live="polite">Tip: replace this with the song you both love before sending the page.</p>
+    </div>
+  </section>
+
+  <section class="last-note" id="surprise">
+    <div class="big-heart">♡</div>
+    <div class="section-label">one last thing</div>
+    <h2>Hey, Memo...</h2>
+    <p>You're pretty special, you know that? And yes, this is me being cute for once, so please appreciate it. 😭💗</p>
+    <button class="button" id="reveal">One more little thing...</button>
+    <div class="surprise" id="surpriseMessage">If I could give you one thing, it would be the chance to see yourself the way I see you: someone worth appreciating, listening to, laughing with, and choosing again and again. Thank you for being you, Memo. You have a very big place in my heart. ♡</div>
+  </section>
+  <div class="footer">A LITTLE PAGE FOR MEMO · MADE WITH ♡</div>
+</main>
+<script>
+  const revealButton = document.getElementById('reveal');
+  const surpriseMessage = document.getElementById('surpriseMessage');
+  revealButton.addEventListener('click', () => {
+    surpriseMessage.classList.toggle('show');
+    revealButton.textContent = surpriseMessage.classList.contains('show') ? 'Hide my little message ♡' : 'One more little thing...';
+  });
+  document.getElementById('playSong').addEventListener('click', () => {
+    const input = document.getElementById('songLink');
+    const status = document.getElementById('songStatus');
+    try {
+      const url = new URL(input.value.trim());
+      if (!['http:', 'https:'].includes(url.protocol)) throw new Error('invalid');
+      window.open(url.href, '_blank', 'noopener,noreferrer');
+      status.textContent = 'Opening your song in a new tab ♡';
+    } catch (_) {
+      status.textContent = 'Add a valid YouTube or Spotify link first, then tap the button ♡';
+      input.focus();
+    }
+  });
+</script>
+</body>
+</html>
